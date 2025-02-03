@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Transparent Login Form HTML CSS</title>
+    <style>
+        /* login page2 */
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   user-select: none;
+ }
+ .bg-img{
+   background: url('background2.jpg');
+   height: 100vh;
+   background-size: cover;
+   background-position: center;
+ }
+ .content{
+   position: absolute;
+   background-color: gray;
+   top: 50%;
+   left: 50%;
+   z-index: 999;
+   text-align: center;
+   padding: 60px 32px;
+   width: 370px;
+   transform: translate(-50%,-50%);
+   background: rgba(255,255,255,0.04);
+   box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);
+ }
+ .content header{
+   color: rgb(255, 196, 3);
+   font-size: 33px;
+   font-weight: 600;
+   margin: 0 0 35px 0;
+   font-family: 'Montserrat',sans-serif;
+ }
+ .field{
+   position: relative;
+   height: 45px;
+   width: 100%;
+   display: flex;
+   background:rgb(255, 255, 255);
+ }
+ .field span{
+   color: #222;
+   width: 40px;
+   line-height: 45px;
+ }
+ .field input{
+   height: 100%;
+   width: 100%;
+   background: transparent;
+   border: none;
+   outline: none;
+   color: #222;
+   font-size: 16px;
+   font-family: 'Poppins',sans-serif;
+ }
+ .space{
+   margin-top: 16px;
+ }
+ .show{
+   position: absolute;
+   right: 13px;
+   font-size: 13px;
+   font-weight: 700;
+   color: #222;
+   display: none;
+   cursor: pointer;
+   font-family: 'Montserrat',sans-serif;
+ }
+ .pass-key:valid ~ .show{
+   display: block;
+ }
+ .pass{
+   text-align: left;
+   color: rgb(255, 225, 128);
+   margin: 10px 0;
+ }
+ .pass a{
+   color: rgb(255, 225, 128);
+   text-decoration: none;
+   font-family: 'Poppins',sans-serif;
+ }
+ .pass:hover a{
+   text-decoration: underline;
+   color: rgb(255, 196, 3);;
+ }
+ .field input[type="submit"]{
+   background: #3498db;
+   border: 1px solid #2691d9;
+   color: rgb(255, 197, 6);
+   font-size: 18px;
+   letter-spacing: 1px;
+   font-weight: 600;
+   cursor: pointer;
+   font-family: 'Montserrat',sans-serif;
+ }
+ .field input[type="submit"]:hover{
+   background: #2691d9;
+ }
+ .login{
+   color: rgb(255, 225, 128);
+   margin: 20px 0;
+   font-family: 'Poppins',sans-serif;
+ }
+ button {
+   background-color:#007bff; /* Green background */
+   border: none; /* Remove borders */
+   color:rgb(255, 255, 255);
+   padding: 15px 20px; /* Padding */
+   text-align: center; /* Center text */
+   text-decoration: none; /* Remove underline */
+   display: inline-block; /* Make it inline */
+   font-size: 16px; /* Font size */
+   margin: 4px 2px; /* Margin */
+   cursor: pointer; /* Add a pointer cursor on hover */
+   border-radius: 4px; /* Add rounded corners */
+   margin-left: 0%;
+ }
+ input[type="button"]:hover {
+   background-color:  #0056b3;
+ }
+
+ .signup{
+   font-size: 15px;
+   color: rgb(255, 255, 255);
+   font-family: 'Poppins',sans-serif;
+ }
+ .signup a{
+   color: rgb(255, 225, 128);
+   text-decoration: none;
+ }
+ .signup a:hover{
+   text-decoration: underline;
+   color: rgb(250, 193, 7);
+ }
+
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+<div class="bg-img">
+    <div class="content">
+        <header>Login Form</header>
+        <form action="booknow.html">
+            <div class="field">
+                <span class="fa fa-user"></span>
+                <input type="text" required placeholder="Email or Phone">
+            </div>
+            <div class="field space">
+                <span class="fa fa-lock"></span>
+                <input type="password" class="pass-key" required placeholder="Password">
+                <span class="show">SHOW</span>
+            </div>
+            <div class="pass">
+                <a href="#">Forgot Password?</a>
+            </div>
+            <button>login</button>
+        </form>
+        <div class="signup">
+            Don't have account?
+            <a href="signup.html">Signup Now</a>
+        </div>
+    </div>
+</div>
+<script>
+    const pass_field = document.querySelector('.pass-key');
+    const showBtn = document.querySelector('.show');
+    showBtn.addEventListener('click', function(){
+     if(pass_field.type === "password"){
+       pass_field.type = "text";
+       showBtn.textContent = "HIDE";
+       showBtn.style.color = "#3498db";
+     }else{
+       pass_field.type = "password";
+       showBtn.textContent = "SHOW";
+       showBtn.style.color = "#222";
+     }
+    });
+</script>
+</body>
+</html>

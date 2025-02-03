@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-image: url("background2.jpg");
+          height: 100vh;
+        background-size: cover;
+        background-position: center;
+        }
+        header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px;
+      background: rgba(255,255,255,0.04);
+        box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);
+    }
+
+    header .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .navbar .logo {
+      color: #f5b505;;
+      font-weight: 600;
+      font-size: 2.1rem;
+      text-decoration: none;
+    }
+
+    .navbar .logo span {
+      color: #f5b505;
+    }
+
+    .navbar .menu-links {
+      display: flex;
+      list-style: none;
+      gap: 35px;
+    }
+
+    .navbar a {
+      color: #ffffff;
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    .navbar a:hover {
+      color: #ffffff;
+    }
+        .container {
+          max-width: 600px;
+          margin: 150px auto;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rrgba(250, 247, 247, 0.1)
+          border: none;
+          outline: none;
+          background-color:#f8d63d;
+          margin-bottom :500px;
+        }
+
+        h1 {
+          text-align: center;
+          color: #303030;
+        }
+
+        .confirmation-code {
+          text-align: center;
+          font-size: 24px;
+          margin-top: 20px;
+          color: #303030;
+        }
+
+        .booking-details {
+          margin-top: 30px;
+        }
+
+        .booking-details h2 {
+          font-size: 18px;
+          color:#303030;
+        }
+
+        .booking-details p {
+          color: #303030;
+          margin: 10px 0;
+        }
+        button {
+        background-color:#f5b505; /* Green background */
+        border: none; /* Remove borders */
+        padding: 15px 20px;
+        text-align: center; /* Center text */
+        text-decoration: none; /* Remove underline */
+        display: inline-block; /* Make it inline */
+        font-size: 16px; /* Font size */
+        margin: 4px 2px; /* Margin */
+        cursor: pointer; /* Add a pointer cursor on hover */
+        border-radius: 4px; /* Add rounded corners */
+        margin-left: 70%;
+      }
+      input[type="button"]:hover {
+      }
+      .qr-code {
+        position: absolute;
+        top: 60%;
+        right: 20px;
+        transform: translateY(-50%);
+        margin-right: 30%;
+    }
+    </style>
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <a class="logo" href="#">newAirlines<span>.</span></a>
+        <ul class="menu-links">
+            <span id="close-menu-btn" class="material-symbols-outlined"></span>
+            <li><a href="booknow.html">Home</a></li>
+            <li><a href="personaldetails.html">FlightReservation</a></li>
+            <li><a href="payment.html">Payement</a></li>
+            <li><a href="receipt.html">Receipt</a></li>
+            <li><a href="aboutus.html">About us</a></li>
+            <li><a href="login.html">Log Out</a></li>
+        </ul>
+        <span id="hamburger-btn" class="material-symbols-outlined"></span>
+    </nav>
+</header>
+<div class="container">
+    <h1>Booking Confirmation</h1>
+    <div class="confirmation-code" id="confirmationCode">
+        Generating confirmation code...
+    </div>
+    <div class="booking-details">
+        <h2>Booking Details</h2>
+        <p><strong>Flight:</strong> Flight XYZ123</p>
+        <p><strong>Date:</strong> January 1, 2025</p>
+        <p><strong>Passenger(s):</strong> <span th:text="${firstname}"></span></p>
+        <p><strong>Seat(s):</strong> 12A, 12B</p>
+        <p><strong>Total Price:</strong> $500</p>
+    </div>
+    <div class="qr-code">
+        <img src="qr.png" alt="QR Code">
+    </div>
+    <form action="personaldetails.html">
+        <button>book another ticket</button>
+    </form>
+</div>
+
+<script>
+    function generateConfirmationCode() {
+      var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+      var length = 8;
+      var code = '';
+      for (var i = 0; i < length; i++) {
+        code += characters.charAt(Math.floor(Math.random() * characters.length));
+      }
+      return code;
+    }
+
+    document.getElementById('confirmationCode').innerText = 'Confirmation Code: ' + generateConfirmationCode();
+</script>
+</body>
+</html>

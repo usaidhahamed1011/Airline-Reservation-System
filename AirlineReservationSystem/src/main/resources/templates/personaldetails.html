@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("background2.jpg");
+      background-size: cover;
+          background-position: center;
+        }
+        header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px;
+      background: rgba(255,255,255,0.04);
+        box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);
+    }
+
+    header .navbar {
+      color: rgb(255, 196, 3);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .navbar .logo {
+      color: rgb(255, 196, 3);
+      font-weight: 600;
+      font-size: 2.1rem;
+      text-decoration: none;
+    }
+    .navbar .logo span {
+      color: #ffffff;
+    }
+
+    .navbar .menu-links {
+      color: rgb(255, 196, 3);
+      display: flex;
+      list-style: none;
+      gap: 35px;
+    }
+
+    .navbar a {
+      color: #ffffff;
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    .navbar a:hover {
+      color: #ffc400;
+    }
+
+        .container {
+            width: 80%;
+            margin: 150px auto;
+            padding: 20px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.04);
+            box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75)
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #000000;
+        }
+        .section {
+            margin-bottom: 20px;
+            color: #020202;
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #000000;
+        }
+        .field {
+            display: flex;
+            margin-bottom: 10px;
+            color: #000000;
+        }
+        .field label {
+            flex: 1;
+            color: #ffffff;
+        }
+        .field input, .field select {
+            flex: 2;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ffffff;
+        }
+        button {
+        background-color:#008b07; /* Green background */
+        border: none; /* Remove borders */
+        color: rgb(0, 0, 0); /* White text */
+        padding: 15px 20px; /* Padding */
+        text-align: center; /* Center text */
+        text-decoration: none; /* Remove underline */
+        display: inline-block; /* Make it inline */
+        font-size: 16px; /* Font size */
+        margin: 4px 2px; /* Margin */
+        cursor: pointer; /* Add a pointer cursor on hover */
+        border-radius: 4px; /* Add rounded corners */
+        margin-left: 70%;
+      }
+      input[type="button"]:hover {
+        background-color: #008b07;
+      }
+      .container {
+          max-width: 500px;
+          margin: 150px auto;
+          padding: 20px;
+          border-radius: 8px;
+          background: rgba(255,255,255,0.04);
+          box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75)
+
+        }
+
+      h1 {
+        text-align: center;
+        color: #fff;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+        color: #fff;
+      }
+
+      label {
+        display: block;
+        color: #fff;
+        margin-bottom: 5px;
+      }
+
+      input[type="text"],
+      select,
+      input[type="time"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        box-sizing: border-box;
+
+      }
+    </style>
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <a class="logo" href="#">newAirlines<span>.</span></a>
+        <ul class="menu-links">
+            <span id="close-menu-btn" class="material-symbols-outlined"></span>
+            <li><a href="booknow.html">Home</a></li>
+            <li><a href="personaldetails.html">FlightReservation </a></li>
+            <li><a href="payment.html">Payement</a></li>
+            <li><a href="receipt.html">Receipt</a></li>
+            <li><a href="aboutus.html">About us</a></li>
+            <li><a href="login.html">Log Out</a></li>
+        </ul>
+        <span id="hamburger-btn" class="material-symbols-outlined"></span>
+    </nav>
+</header>
+<div class="container">
+    <h2>Personal Details</h2>
+    <div class="section">
+        <form action="/login" method="post">
+        <div class="field">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+        </div>
+        </form>
+        <div class="field">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+        </div>
+
+        <div class="field">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="field">
+            <label for="phone">passport no:</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="field">
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Flights:</label>
+        <select>
+            <option disabled selected value="">Select your Flights</option>
+            <option value="economy">Chennai-to-Bangkok</option>
+            <option value="business">Deihi-to-Newyork</option>
+            <option value="first">Mumbai-to-Malasiya</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="class">Class:</label>
+        <select id="class" name="class" required>
+            <option value="economy">Economy</option>
+            <option value="business">Business</option>
+            <option value="first">First Class</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+    </div>
+    <form action="payment.html">
+        <button>payment</button>
+    </form>
+</div>
+</body>
+</html>
