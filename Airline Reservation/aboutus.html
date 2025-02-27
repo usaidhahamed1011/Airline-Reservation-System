@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> An About Us Page </title>
+    <!---Custom Css File!--->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        *{
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: 'Poppins', sans-serif;
+
+          header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          padding: 20px;
+          background: rgba(255,255,255,0.04);
+            box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);
+        }
+
+        header .navbar {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+
+        .navbar .logo {
+          color: #ffd000;
+          font-weight: 600;
+          font-size: 2.1rem;
+          text-decoration: none;
+        }
+
+        .navbar .logo span {
+          color: #ffbb00;
+        }
+
+        .navbar .menu-links {
+          display: flex;
+          list-style: none;
+          gap: 35px;
+        }
+
+        .navbar a {
+          color: #ffffff;
+          text-decoration: none;
+          transition: 0.2s ease;
+        }
+
+        .navbar a:hover {
+          color: #ffd000;
+        }
+
+        }
+        .about-us{
+          height: 100vh;
+          width: 100%;
+          padding: 90px 0;
+          background: #ddd;
+          background-image: url(background2.jpg);
+          background-position: center;
+          background-size: cover;
+        }
+        .about{
+          width: 1500px;
+          max-width: 90%;
+          margin: 100px;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+        }
+        .text{
+          width: 600px;
+        }
+        .text h2{
+          font-size: 90px;
+          font-weight: 600;
+          margin-bottom: 10px;
+          color: #ffffff;
+
+        }
+        .text h3{
+          font-size: 45px;
+          font-weight: 500;
+          margin-bottom: 20px;
+          color: #ffffff;
+        }
+        .underline {
+                text-decoration: underline;
+            }
+            .italic {
+                font-style: italic;
+            }
+
+        .text p{
+            color: #ffffff;
+          font-size: 18px;
+          line-height: 25px;
+          letter-spacing: 1px;
+        }
+        .text h4{
+          color: #ffffff;
+        }
+        .data{
+          margin-top: 30px;
+          color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <a class="logo" href="#">newAirlines<span>.</span></a>
+        <ul class="menu-links">
+            <li><a href="booknow.html">Home</a></li>
+            <li><a href="personaldetails.html">FlightReservation</a></li>
+            <li><a href="payment.html">Payement</a></li>
+            <li><a href="receipt.html">Receipt</a></li>
+            <li><a href="aboutus.html">About us</a></li>
+            <li><a href="login.html">Log Out</a></li>
+        </ul>
+
+    </nav>
+</header>
+<section class="about-us">
+    <div class="about">
+        <div class="text">
+            <h2>About Us</h2>
+            <h3><span class="underline">newAirlines</span></h3>
+            <p><span class="italic">Welcome to Airline Reservation System, your one-stop solution for booking flights conveniently and efficiently. We strive to provide top-notch services to our customers and make their travel experience seamless and enjoyable.Our mission is to revolutionize the air travel industry by offering innovative solutions that simplify the booking process and provide exceptional customer service.We envision a world where travel is accessible to everyone, and our platform serves as a gateway to fulfilling travel experiences.</span></p>
+            <h4><s> contuct us : newairline@co.in</s></h4>
+        </div>
+    </div>
+</section>
+</body>
+</html>
